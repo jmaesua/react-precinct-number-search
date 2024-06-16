@@ -17,11 +17,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-<<<<<<< HEAD
           node-version: '16'  # Adjust according to the latest supported Node.js version
-=======
-          node-version: "14"
->>>>>>> 990609a2eb064e1ab68bab227f537a1826d87da3
 
       - name: Install dependencies
         run: npm install
