@@ -17,20 +17,19 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 20.x  # Adjust according to the latest supported Node.js version
+          node-version: '20'  # Use the latest Node.js version
 
       - name: Install dependencies
         run: npm install
 
       - name: Build project
         run: npm run build
-        working-directory: ./dist
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v3
         with:
           name: production-files
-          path: ./dist
+          path: ./dist  # Ensure this is the correct path to your build directory
 
   deploy:
     name: Deploy
@@ -39,6 +38,9 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
@@ -49,4 +51,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          publish_dir: ./dist  # Ensure this is the correct path to your build directory
