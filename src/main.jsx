@@ -5,7 +5,7 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <App base="react-precinct-number-search"/>
   </React.StrictMode>,
   document.getElementById('root')
 )
