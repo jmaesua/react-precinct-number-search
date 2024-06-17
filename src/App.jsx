@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
 import { SearchBar } from "./components/SearchBar";
 import { SearchResultsList } from "./components/SearchResultsList";
@@ -12,10 +12,9 @@ function App() {
   const [showBirthdayForm, setShowBirthdayForm] = useState(false);
   const [showRegistrationForm, setShowRegistrationForm] = useState(false);
   const [showCertificate, setShowCertificate] = useState(false);
-  const [showLandingPage, setShowLandingPage] = useState(true); // Show landing page initially
-
-  // Combined user data and birthday to avoid separate states
-  const [selectedUser, setSelectedUser] = useState(null); 
+  const [selectedUser, setSelectedUser] = useState(null);
+  const [birthday, setBirthday] = useState("");
+  const [showSearch, setShowSearch] = useState(false);
 
   const handleResultClick = (user) => {
     setSelectedUser(user);
@@ -26,25 +25,20 @@ function App() {
     setShowBirthdayForm(false);
   };
 
-  const handleAgeSuccess = (birthday) => {
-    setSelectedUser((prevUser) => ({ ...prevUser, birthday, age: calculateAge(birthday) }));
+  const handleAgeSuccess = (userBirthday) => {
     setShowBirthdayForm(false);
     setShowRegistrationForm(true);
+    setBirthday(userBirthday);
   };
 
-  const calculateAge = (birthday) => {
-    const birthDate = new Date(birthday);
-    const today = new Date();
-    let age = today.getFullYear() - birthDate.getFullYear();
-    const monthDiff = today.getMonth() - birthDate.getMonth();
-    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
-    }
-    return age;
-  };
-
-  const handleRegistrationSubmit = (formData) => {
-    setSelectedUser((prevUser) => ({ ...prevUser, ...formData }));
+  const handleRegistrationSubmit =  (formData) => {
+    const user = {
+      ...selectedUser,
+      birthday: birthday,
+      age: new Date().getFullYear() - new Date(birthday).getFullYear(),
+      ...formData
+    };
+    setSelectedUser(user);
     setShowRegistrationForm(false);
     setShowCertificate(true);
   };
@@ -53,31 +47,22 @@ function App() {
     setShowCertificate(false);
     setResults([]);
     setSelectedUser(null);
-    setShowLandingPage(true); // Return to landing page
-  };
+    setBirthday("");
+    setShowSearch(true);
+  }
 
   const handleNavigateToSearch = () => {
-    setShowLandingPage(false); // Hide landing page
-  };
-
-  useEffect(() => {
-    if (selectedUser && selectedUser.birthday) {
-      setSelectedUser((prevUser) => ({
-        ...prevUser,
-        age: calculateAge(selectedUser.birthday),
-      }));
-    }
-  }, [selectedUser, selectedUser.birthday]);
+    setShowSearch(true);
+  }
 
 
   return (
     <div className="App">
       {(showBirthdayForm || showRegistrationForm || showCertificate) && (
-        <div className="overlay" />
+        <div className="overlay"></div>
       )}
-
-      {showLandingPage ? ( 
-        <LandingPage onNavigateToSearch={handleNavigateToSearch} />
+      {!showSearch ? (
+        <LandingPage onNavigateToSearch={handleNavigateToSearch } />
       ) : (
         <div className="search-bar-container">
           <SearchBar setResults={setResults} />
