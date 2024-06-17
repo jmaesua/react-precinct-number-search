@@ -8,7 +8,7 @@ export const SearchBar = ({ setResults }) => {
   const [input, setInput] = useState("");
 
   const fetchData = (value) => {
-    fetch("/react-precinct-number/dist/precinct-data.json")
+    fetch("/react-precinct-number/precinct-data.json")
       .then((response) => response.json())
       .then((json) => {
         const results = json.filter((user) => {
