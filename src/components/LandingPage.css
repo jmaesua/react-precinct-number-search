@@ -2,6 +2,8 @@
 .landing-page {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
+    /* width: 90%; */
+    box-sizing: border-box;
   }
   
   /* Navbar styles */
@@ -15,10 +17,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 18px;
     background-color: #2e4a24;
     color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
   }
   
   .logo a {
@@ -38,13 +41,14 @@
   }
 
 
-  /* .auth-buttons {
-    position: relative;
-  } */
+  .auth-buttons {
+    width: 150px;
+    /* margin-right: 8px; */
+  }
 
   
   .auth-buttons button {
-    margin-left: 10px;
+    margin-right: 40px;
     padding: 10px 10px;
     background-color: white;
     color: #007bff;
@@ -65,7 +69,7 @@
     /* left: 0; */
     background-color: #fff;
     color: #007bff;
-    padding: 10px;
+    padding: 10px 10px;
     width: 150px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
@@ -139,6 +143,7 @@
   padding: 10px;
   background-color: #162136;
   color: white;
+  /* width: 100vw; */
 }
 
 .footer p {
@@ -182,43 +187,63 @@
 
 /* Navbar */
 @media (min-width: 320px) and (max-width: 600px) {
+  .navbar {
+    width: 100%;
+    margin-right: 10px;
+  }
+  
   .navbar .logo {
-    /* margin-bottom: 10px; */
-    padding: 50px 0;
+    margin-bottom: 10px;
+    padding: 20px 0;
   }
 
   .navbar .logo h2 {
-    font-size: 18px;
-  }
-  
-  /* .auth-buttons .nav-link {
-    display: none;
+    font-size: 14px;
+    padding-right: 10px;
+    /* text-align: center; */
   }
 
-  .auth-buttons:hover .nav-link {
+  .auth-buttons button {
+    margin-right: 10px;
+  }
+  
+
+  /* .auth-buttons:hover .nav-link {
     display: none;
-  } */
+  }  */
 }
 
 
 /* Navbar */
 @media (min-width: 600px) and (max-width: 1024px) {
-  /* .navbar .logo {
+  .navbar  {
+    width: 100%;
+    margin-right: 10px;
+  }
+
+  .navbar .logo {
     margin-bottom: 10px;
-  }
-   */
-  /* .auth-buttons .nav-link {
-    display: none;
+    padding: 20px 0;
   }
 
-  .auth-buttons:hover .nav-link {
-    display: none;
-  } */
+  .navbar .logo h2 {
+    font-size: 24px;
+    /* text-align: center; */
+  }
+
+  .auth-buttons .nav-link {
+    margin-right: 10px;
+  }
+
 }
-
 
 /* HeroSection */
 @media (min-width: 320px) and (max-width: 600px) {
+
+  .hero-section {
+    margin: auto;
+    /* width: 100%; */
+  }
   .hero-section h1 {
     font-size: 1.8rem;
   }
