@@ -8,12 +8,7 @@ export const SearchBar = ({ setResults }) => {
   const [input, setInput] = useState("");
 
   const fetchData = (value) => {
-    fetch("/react-precinct-search-number/precinct-data.json").then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok " + response.statusText);
-      }
-      return response.json();
-    })
+    fetch("/react-precinct-search-number/precinct-data.json")
       .then((response) => response.json())
       .then((json) => {
         const results = json.filter((user) => {
@@ -27,9 +22,6 @@ export const SearchBar = ({ setResults }) => {
         });
         setResults(results);
       })
-      .catch((error) => {
-        console.error("There is a problem with the fetch operation", error);
-      });
   };
 
   const handleChange = (value) => {
