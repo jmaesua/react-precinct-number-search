@@ -8,7 +8,7 @@ export const SearchBar = ({ setResults }) => {
   const [input, setInput] = useState("");
 
   const fetchData = (value) => {
-    fetch("/react-precinct-number-search/dist/precinct-data.json").then((response) => response.json()).then((json) => {
+    fetch("precinct-data.json").then((response) => response.json()).then((json) => {
         const results = json.filter((user) => {
           const searchValue = value.toLowerCase();
           const name = user.NAME.toLowerCase();
