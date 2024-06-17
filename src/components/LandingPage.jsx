@@ -99,7 +99,7 @@ export const Navbar = ({ onNavigateToSearch, onLoginPopupToggle,onMemberLoginPop
                 {/* <button className="sign-in-button" onClick={handleMemberClick}>
                     Signin/Signup. Be a Member
                 </button> */}
-                <button className="nav-link" onClick={onLoginPopupToggle}>Signin/Signup. Be a Member</button>
+                <button className="nav-link" onClick={onLoginPopupToggle}>Signup. Be a Member</button>
             </div>
         </nav>
     );
