@@ -45,7 +45,7 @@
   
   .auth-buttons button {
     margin-left: 10px;
-    padding: 10px 20px;
+    padding: 10px 10px;
     background-color: white;
     color: #007bff;
     border: none;
@@ -66,7 +66,7 @@
     background-color: #fff;
     color: #007bff;
     padding: 10px;
-    width: 200px;
+    width: 150px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     z-index: 1000;
@@ -188,7 +188,7 @@
   }
 
   .navbar .logo h2 {
-    font-size: 20px;
+    font-size: 18px;
   }
   
   /* .auth-buttons .nav-link {
