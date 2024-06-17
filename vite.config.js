@@ -5,10 +5,10 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: "react-precinct-search-number",
-  server: {
-    historyApiFallback: true,
-  },
-  build: {
-    outDir: 'dist',
-  },
+  // server: {
+  //   historyApiFallback: true,
+  // },
+  // build: {
+  //   outDir: 'dist',
+  // },
 });
