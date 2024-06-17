@@ -90,7 +90,7 @@ export const Navbar = ({ onNavigateToSearch, onLoginPopupToggle,onMemberLoginPop
     return (
         <nav className="navbar">
             <div className="logo">
-                <a href="https://www.philatlas.com/luzon/ncr/quezon-city/san-bartolome.html" title="San Bartolome">
+                <a href="https://www.jonjonfrancisco.com" title="San Bartolome">
                     <img src={logo} alt="Logo image" />
                     <h2>Barangay San Bartolome</h2>
                 </a>

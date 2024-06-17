@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import { SearchBar } from "./components/SearchBar";
 import { SearchResultsList } from "./components/SearchResultsList";
@@ -12,9 +12,10 @@ function App() {
   const [showBirthdayForm, setShowBirthdayForm] = useState(false);
   const [showRegistrationForm, setShowRegistrationForm] = useState(false);
   const [showCertificate, setShowCertificate] = useState(false);
-  const [selectedUser, setSelectedUser] = useState(null);
-  const [birthday, setBirthday] = useState("");
-  const [showSearch, setShowSearch] = useState(false);
+  const [showLandingPage, setShowLandingPage] = useState(true); // Show landing page initially
+
+  // Combined user data and birthday to avoid separate states
+  const [selectedUser, setSelectedUser] = useState(null); 
 
   const handleResultClick = (user) => {
     setSelectedUser(user);
@@ -25,20 +26,25 @@ function App() {
     setShowBirthdayForm(false);
   };
 
-  const handleAgeSuccess = (userBirthday) => {
+  const handleAgeSuccess = (birthday) => {
+    setSelectedUser((prevUser) => ({ ...prevUser, birthday, age: calculateAge(birthday) }));
     setShowBirthdayForm(false);
     setShowRegistrationForm(true);
-    setBirthday(userBirthday);
   };
 
-  const handleRegistrationSubmit =  (formData) => {
-    const user = {
-      ...selectedUser,
-      birthday: birthday,
-      age: new Date().getFullYear() - new Date(birthday).getFullYear(),
-      ...formData
-    };
-    setSelectedUser(user);
+  const calculateAge = (birthday) => {
+    const birthDate = new Date(birthday);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    return age;
+  };
+
+  const handleRegistrationSubmit = (formData) => {
+    setSelectedUser((prevUser) => ({ ...prevUser, ...formData }));
     setShowRegistrationForm(false);
     setShowCertificate(true);
   };
@@ -47,22 +53,31 @@ function App() {
     setShowCertificate(false);
     setResults([]);
     setSelectedUser(null);
-    setBirthday("");
-    setShowSearch(true);
-  }
+    setShowLandingPage(true); // Return to landing page
+  };
 
   const handleNavigateToSearch = () => {
-    setShowSearch(true);
-  }
+    setShowLandingPage(false); // Hide landing page
+  };
+
+  useEffect(() => {
+    if (selectedUser && selectedUser.birthday) {
+      setSelectedUser((prevUser) => ({
+        ...prevUser,
+        age: calculateAge(selectedUser.birthday),
+      }));
+    }
+  }, [selectedUser, selectedUser.birthday]);
 
 
   return (
     <div className="App">
       {(showBirthdayForm || showRegistrationForm || showCertificate) && (
-        <div className="overlay"></div>
+        <div className="overlay" />
       )}
-      {!showSearch ? (
-        <LandingPage onNavigateToSearch={handleNavigateToSearch } />
+
+      {showLandingPage ? ( 
+        <LandingPage onNavigateToSearch={handleNavigateToSearch} />
       ) : (
         <div className="search-bar-container">
           <SearchBar setResults={setResults} />
