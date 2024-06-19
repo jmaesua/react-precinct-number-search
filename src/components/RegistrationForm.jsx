@@ -62,7 +62,7 @@ export const RegistrationForm = ({ onSubmit }) => {
         accept="image/*"
         onChange={handleSignatureChange}
       /> */}
-        {signatureUrl && <img src={signatureUrl} alt="Signature" width="100" />}
+        {/* {signatureUrl && <img src={signatureUrl} alt="Signature" width="100" />} */}
       <button type="submit">Register</button>
     </form>
   );

@@ -44,14 +44,14 @@ export const Certificate = ({ user, onBackToSearch }) => {
 
   const displayPhotoUrl = photoUrl || 'https://via.placeholder.com/150';
 
-  const isValidUrl = (url) => {
-    try {
-      new URL(url);
-      return true;
-    } catch (_) {
-      return false;
-    }
-  };
+  // const isValidUrl = (url) => {
+  //   try {
+  //     new URL(url);
+  //     return true;
+  //   } catch (_) {
+  //     return false;
+  //   }
+  // };
 
   return (
     <div className="certificate-container">
