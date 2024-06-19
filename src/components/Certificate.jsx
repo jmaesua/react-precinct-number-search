@@ -96,15 +96,16 @@ export const Certificate = ({ user, onBackToSearch }) => {
               </div>
             </div>
           </div>
-          <div className="back-box">
-            <button
-              onClick={onBackToSearch}
-              className="back"
-            >
-              Back to Search PRECINCT NUMBER
-            </button>
-          </div>
+          
         </div>
+      </div>
+      <div className="back-box">
+        <button
+          onClick={onBackToSearch}
+          className="back"
+          >
+          BACK
+        </button>
       </div>
     </div>
   );
