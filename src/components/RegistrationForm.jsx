@@ -6,7 +6,7 @@ export const RegistrationForm = ({ onSubmit }) => {
   const [contactNumber, setContactNumber] = useState("");
   const [photoUrl, setPhotoUrl] = useState("");
 //   const [selfie, setSelfie] = useState(null);
-  // const [signatureUrl, setSignatureUrl] = useState(null);
+  const [signatureUrl, setSignatureUrl] = useState("");
 
 
   const handleSubmit = (event) => {
@@ -15,7 +15,7 @@ export const RegistrationForm = ({ onSubmit }) => {
     const formData = {
         contactNumber,
         photoUrl,
-        // signatureUrl
+        signatureUrl
     };
     onSubmit(formData);
   };
@@ -29,14 +29,16 @@ export const RegistrationForm = ({ onSubmit }) => {
     reader.readAsDataURL(file);
   };
 
-  // const handleSignatureChange = (event) => {
-  //   const file = event.target.files[0];
-  //   const reader = new FileReader();
-  //   reader.onloadend = () => {
-  //     setSignatureUrl(reader.result);
-  //   };
-  //   reader.readAsDataURL(file);
-  // };
+  const handleSignatureChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setSignatureUrl(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   return (
     <form className="registration-form" onSubmit={handleSubmit}>
@@ -56,13 +58,14 @@ export const RegistrationForm = ({ onSubmit }) => {
         required
       />
         {photoUrl && <img src={photoUrl} alt="User Photo" width="100" />}
-      {/* <label>Upload Signature:</label>
+      <label>Upload Signature:</label>
       <input
         type="file"
         accept="image/*"
         onChange={handleSignatureChange}
-      /> */}
-        {/* {signatureUrl && <img src={signatureUrl} alt="Signature" width="100" />} */}
+
+      />
+        {signatureUrl && <img src={signatureUrl} alt="Signature" width="100" />}
       <button type="submit">Register</button>
     </form>
   );
