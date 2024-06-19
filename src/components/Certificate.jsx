@@ -13,7 +13,7 @@ export const Certificate = ({ user, onBackToSearch }) => {
     ADDRESS,
     contactNumber,
     photoUrl,
-    signatureUrl,
+    // signatureUrl,
   } = user;
 
   const qrData = NAME;

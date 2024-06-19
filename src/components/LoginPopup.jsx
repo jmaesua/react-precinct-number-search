@@ -64,7 +64,7 @@ export const LoginPopup = ({ onClose, onLogin, onSignUp, initialIsSigningUp }) =
                                     <label>First Name</label>
                                     <input type="text" placeholder="Enter First Name" className="form-input" required />
                                 </div>
-                                <div>
+                                {/* <div>
                                     <label>Birthday</label>
                                     <input type="date" placeholder="Enter Birthday" className="form-input" required />
                                 </div>
@@ -83,10 +83,10 @@ export const LoginPopup = ({ onClose, onLogin, onSignUp, initialIsSigningUp }) =
                                 <div>
                                     <label>Photo</label>
                                     <input type="file" className="form-input" required />
-                                </div>
+                                </div> */}
                                 <div>
                                     <label>Signature</label>
-                                    <input type="file" className="form-input" placeholder="(Optional)" />
+                                    <input type="file" className="form-input" required />
                                 </div>
                                 <button type="submit" className="form-submit">Sign Up</button>
                             </div>

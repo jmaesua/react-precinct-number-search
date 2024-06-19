@@ -122,9 +122,6 @@
 } */
 
 .back-box .back {
-  position: relative;
-  right: 0;
-  bottom: 0;
   padding: 10px 20px;
   background-color: #007bff;
   color: #fff;
@@ -156,7 +153,7 @@
     padding: 8px;
   }
 
-  .user-details-1, .user-details-2 {
+  .personal-info, .add-contact-info {
     padding: 5px;
     font-size: 14px;
   }
@@ -177,7 +174,7 @@
     padding: 5px;
   }
 
-  .footer .back-to-search-button {
+  .back-box .back {
     width: 100%;
   }
 }
