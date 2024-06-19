@@ -22,7 +22,7 @@
 }
 
 .certificate-info-details {
-  position: absolute;
+  position: relative;
   top: 28%;
   left: 4%;
   padding: 20px;
