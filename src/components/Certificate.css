@@ -1,377 +1,157 @@
 .certificate-container {
-  /* display: grid;
-  grid-template-rows: repeat(4, 1fr); */
-    /* width: 90vw;
-    height: 72vh; */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    border-radius: 10px;
-    /* border: 2px solid #000; */
-    z-index: 1000; /* Ensure it's above the overlay */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 800px;
-    box-sizing: border-box;
-  }
-
-  .certificate-info-container {
-    position: relative;
-    /* width: 100%;
-    height: 100%; */
-    background: url(/public/E-CERT.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin-inline: auto;
-  }
-
-  .certificate-info-details {
-    width: 430px;
-    height: 380px;
-    position: absolute;
-    top: 28%;
-    left: 4%;
-
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    align-items: center;
-  }
-  
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 500; /* The overlay's z-index */
-  }
-  
-  .footer {
-    text-align: center;
-    width: 100%;
-    text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #162136;
-  }
-
-  /* .certificate-container .footer p {
-    display: none;
-    color: #030509;
-    font-weight: bold;
-  } */
-
-  .certificate-container .footer {
-    background-color: transparent;
-    color: #fff;
-  }
-
-  .footer button {
-    width: 400px;
-    align-items: center;
-  }
-
-  /* .header h1 {
-    font-size: 28px;
-    text-align: center;
-    margin-bottom: 20px;
-  } */
-
-  .photo-container {
-    text-align: center;
-    margin-inline: auto;
-    margin-block-start: 5px;
-  }
-  
-  .photo-container img {
-    /* display: block; */
-    margin: 5px auto;
-    width: 150px;
-    height: 150px;
-    border-radius: 5px;
-    border: 2px solid #000;
-    object-fit: cover;
-  }
-  
-  .name-container {
-    font-size: 15px;
-    text-align: center;
-    margin: 10px;
-    padding: 8px 0;
-    height: 40px;
-    width: 430px;
-    border: 1px solid #000000;
-    border-radius: 8px;
-  }
-
-  .name-container h2 {
-    padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 800px;
+  box-sizing: border-box;
 }
 
-  
-  .details-container {
-    height: 150px;
-    width: 430px;
+.certificate-info-container {
+  position: relative;
+  background: url(/public/E-CERT.png) no-repeat center;
+  background-size: cover;
+  padding: 20px;
+  border-radius: 10px;
+}
 
-    display: flex;
-    gap: 4px;
-    padding: 20px;
-    /* border-radius: 10px; */
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .qr-code {
-    width: 110px;
-    height: 100%;
-    border: 1px solid #333;
-  }
-  
-  .user-details {
-    width: 76%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    /* border: 1px solid #000; */
-  }
+.certificate-info-details {
+  position: relative;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+}
 
-  .user-details-1 {
-    display: flex;
-    justify-content: space-between;
-    padding: 2px 10px 2px 5px;
-    border: 1px solid #333;
-    border-radius: 8px;
-  }
+.photo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-  .user-details-2 {
-    border: 1px solid #333;
-    padding: 2px 10px 2px 5px;
-    border-radius: 8px;
-  }
+.photo-container img {
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+  border: 2px solid #000;
+  object-fit: cover;
+}
 
-  /* .user-details .user-details-2 .detail-row {
-    padding: 5px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    padding: 2px 0 5px 10px;
-  }
+.name-container {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 8px;
+}
 
-  .detail-row p:nth-last-of-type(2), .user-details-2 p:nth-last-of-type(2) {
-    padding-bottom: 8px;
-  } */
+.name-container h2 {
+  margin: 0;
+}
 
-  /* .user-details-1 .detail-row {
-    display: flex;
-    flex-direction: column;
+.details-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
 
-  } */
-  
-  /* .user-details-2 {
-    display: flex;
-    flex-direction: row;
-  } */
-  
-  /* .detail-row {
-    display: flex;
-    justify-content: space-between;
-  } */
-  
-  /* .detail-row p {
-    margin: 0;
-    font-weight: bold;
-  }
-  
-  .detail-row p:last-child {
-    font-weight: normal;
-  } */
-  
-  /* @media (max-width: 600px) {
-    .certificate-container {
-      width: 90%;
-      padding: 5px;
-      margin: 0 auto;
-    }
+.qr-code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #333;
+  padding: 10px;
+  border-radius: 8px;
+}
 
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-    .certificate-container .header h1 {
-      font-size: 20px;
-      margin: 80px 0 0 0;
-  }
+.user-details-1, .user-details-2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 8px;
+}
 
-    .certificate-container .photo-container img {
-      width: 80px;
-      height: 80px;
-  }
+.user-details-1 .detail-row, .user-details-2 {
+  display: flex;
+  justify-content: space-between;
+}
 
-    .details-container {
-      flex-direction: column;
-      padding: 10px;
-    }
+.footer {
+  text-align: center;
+  margin-top: 20px;
+}
 
-  
-    .user-details {
-      width: 100%;
-      text-align: center;
-      padding-inline: 4px;
-    }
+.footer p {
+  margin: 10px 0;
+  font-weight: bold;
+}
 
-    .user-details-2 {
-      height: 60px;
-      display: flex;
-      flex-direction: row;
-      border-radius: 5px;
-      justify-content: center;
-    }
+.footer .back-to-search-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-    .user-details-2 p {
-      padding-top: 0px;
-    }
-  } */
+.footer .back-to-search-button:hover {
+  background-color: #0056b3;
+}
 
-  /* Certificate Container */
-@media (min-width: 600px) and (max-width: 1024px) {
-  .certificate-container {
+@media (max-width: 768px) {
+  .certificate-info-details {
     padding: 10px;
   }
 
-  .certificate-container .header h1 {
-    font-size: 24px;
-    margin: 80px 0 0 0;
-  }
-
-  .certificate-container .photo-container img {
-    width: 80px;
-    height: 80px;
-  }
-
-  .certificate-container .details-container {
+  .details-container {
     flex-direction: column;
   }
 
-  .certificate-container .qr-code,
-  .certificate-container .user-details {
-    padding-left: 0;
-    text-align: center;
+  .photo-container img {
+    width: 100px;
+    height: 100px;
   }
 
-  .certificate-container .user-details p {
-    margin: 5px 0;
-    border: none;
+  .name-container {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .user-details-1, .user-details-2 {
+    padding: 5px;
     font-size: 14px;
   }
 }
 
-
-/* Certificate Container */
-@media (min-width: 320px) and (max-width: 600px) {
+@media (max-width: 480px) {
   .certificate-container {
-    width: 90%;
-    padding: 5px;
-    margin: 0 auto;
-  }
-
-  .certificate-container .header h1 {
-    font-size: 20px;
-    margin: 80px 0 0 0;
-  }
-
-  .certificate-container .photo-container img {
-    width: 80px;
-    height: 80px;
+    width: 95%;
+    padding: 10px;
   }
 
   .details-container {
     flex-direction: column;
-    padding: 10px;
-    
-  }
-
-  .user-details {
-    width: 100%;
-    text-align: center;
-    padding-inline: auto;
-  }
-
-  .user-details-2 {
-    height: 60px;
-    display: flex;
-    flex-direction: row;
-    border-radius: 5px;
-    justify-content: center;
-    align-items: center;
     gap: 10px;
   }
 
-  .user-details-2 p {
-    padding-top: 12px;
+  .qr-code {
+    padding: 5px;
   }
 
-  .certificate-container .footer .back-to-search-button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .certificate-container .footer .back-to-search-button:hover {
-    background-color: #0056b3;
+  .footer .back-to-search-button {
+    width: 100%;
   }
 }
-
-  
-
-  .certificate-container .footer .back-to-search-button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .certificate-container .footer .back-to-search-button:hover {
-    background-color: #0056b3;
-  }
-
-  /* @media (max-width: 768px) {
-    .certificate-container {
-      padding: 10px;
-    }
-  
-    .certificate-container .header h1 {
-      font-size: 24px;
-    }
-  
-    .certificate-container .photo-container img {
-      width: 80px;
-      height: 80px;
-    }
-  
-    .certificate-container .details-container {
-      flex-direction: column;
-    }
-  
-    .certificate-container .qr-code,
-    .certificate-container .user-details {
-      padding-left: 0;
-      text-align: center;
-    }
-  
-    .certificate-container .user-details p {
-      margin: 5px 0;
-      border: none;
-      font-size: 14px;
-    }
-  } */
