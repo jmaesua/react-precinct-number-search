@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Certificate.css';
 import QRCode from 'qrcode.react';
+import Ecert from '/E-CERT.png';
 
 export const Certificate = ({ user, onBackToSearch }) => {
   const {
