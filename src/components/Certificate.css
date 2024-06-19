@@ -51,7 +51,7 @@
 }
 
 .name-container {
-  width: 100%;
+  width: 430px;
   text-align: center;
   margin-bottom: 5px;
   padding: 10px;
@@ -121,8 +121,8 @@
   font-weight: bold;
 } */
 
-.footer .back {
-  position: absolute;
+.back-box .back {
+  position: relative;
   right: 0;
   bottom: 0;
   padding: 10px 20px;

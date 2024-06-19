@@ -96,7 +96,7 @@ export const Certificate = ({ user, onBackToSearch }) => {
               </div>
             </div>
           </div>
-          <div className="footer">
+          <div className="back-box">
             <button
               onClick={onBackToSearch}
               className="back"
