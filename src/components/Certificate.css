@@ -29,10 +29,9 @@
   width: 430px;
   height: 380px;
 
-  display: grid;
+  /* display: grid;
   grid-template-rows: 1fr 1fr 1fr;
-  /* justify-content: space-evenly; */
-  align-items: center;
+  align-items: center; */
 
 }
 
