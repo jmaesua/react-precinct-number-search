@@ -50,7 +50,6 @@
 }
 
 .name-container {
-  font-size: 20px;
   text-align: center;
   margin-bottom: 20px;
   padding: 10px;
@@ -60,6 +59,7 @@
 
 .name-container h2 {
   margin: 0;
+  font-size: 18px;
 }
 
 .details-container {
