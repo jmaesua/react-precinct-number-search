@@ -59,53 +59,55 @@ export const Certificate = ({ user, onBackToSearch }) => {
         <h1>MEMBERSHIP CERTIFICATION</h1>
       </div> */}
       <div className="certificate-info-container">
-        <div className="photo-container">
-          <img src={displayPhotoUrl} alt="User Photo" />
-        </div>
-        <div className="name-container">
-          <h2>{NAME}</h2>
-        </div>
-        <div className="details-container">
-          <div className="qr-code">
-            <QRCode value={qrData} size={qrSize} />
+        <div className="certificate-info-details">
+          <div className="photo-container">
+            <img src={displayPhotoUrl} alt="User Photo" />
           </div>
-          <div className="user-details">
-            <div className="user-details-1">
-              <div className="detail-row">
-                <p className='pb'>Birthday:</p>
-                <p>{birthday}</p>
-              </div>
-              <div className="detail-row">
-                <p className='pb'>Age:</p>
-                <p>{age}</p>
-              </div>
-              <div className="detail-row">
-                <p className='pb'>Cluster #:</p>
-                <p>{cluster}</p>
-              </div>
-              <div className="detail-row">
-                <p className='pb'>Precinct #:</p>
-                <p>{precinct}</p>
-              </div>
+          <div className="name-container">
+            <h2>{NAME}</h2>
+          </div>
+          <div className="details-container">
+            <div className="qr-code">
+              <QRCode value={qrData} size={qrSize} />
             </div>
-            <div className="user-details-2">
-              <p className='pb'>Address:</p>
-              <p>{ADDRESS}</p>
-            </div>
-            <div className="user-details-2">
-              <p className='pb'>Contact Number:</p>
-              <p>{contactNumber}</p>
+            <div className="user-details">
+              <div className="user-details-1">
+                <div className="detail-row">
+                  <p className='pb'>Birthday:</p>
+                  <p>{birthday}</p>
+                </div>
+                <div className="detail-row">
+                  <p className='pb'>Age:</p>
+                  <p>{age}</p>
+                </div>
+                <div className="detail-row">
+                  <p className='pb'>Cluster #:</p>
+                  <p>{cluster}</p>
+                </div>
+                <div className="detail-row">
+                  <p className='pb'>Precinct #:</p>
+                  <p>{precinct}</p>
+                </div>
+              </div>
+              <div className="user-details-2">
+                <p className='pb'>Address:</p>
+                <p>{ADDRESS}</p>
+              </div>
+              <div className="user-details-2">
+                <p className='pb'>Contact Number:</p>
+                <p>{contactNumber}</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="footer">
-          <p>certified resident of San Bartolome</p>
-          <button
-            onClick={onBackToSearch}
-            className="back-to-search-button"
-          >
-            Back to Search PRECINCT NUMBER
-          </button>
+          <div className="footer">
+            <p>certified resident of San Bartolome</p>
+            <button
+              onClick={onBackToSearch}
+              className="back-to-search-button"
+            >
+              Back to Search PRECINCT NUMBER
+            </button>
+          </div>
         </div>
       </div>
     </div>
