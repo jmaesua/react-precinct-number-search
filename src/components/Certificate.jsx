@@ -18,15 +18,15 @@ export const Certificate = ({ user, onBackToSearch }) => {
 
   const qrData = NAME;
 
-  const [qrSize, setQrSize] = useState(200);
+  const [qrSize, setQrSize] = useState(110);
 
   const updateQrsize = () => {
     if (window.innerWidth < 600) {
       setQrSize(100);
     } else if (window.innerWidth < 768) {
-      setQrSize(150);
+      setQrSize(100);
     } else {
-      setQrSize(200);
+      setQrSize(110);
     }
   };
 
@@ -55,9 +55,6 @@ export const Certificate = ({ user, onBackToSearch }) => {
 
   return (
     <div className="certificate-container">
-      {/* <div className="header">
-        <h1>MEMBERSHIP CERTIFICATION</h1>
-      </div> */}
       <div className="certificate-info-container">
         <div className="certificate-info-details">
           <div className="photo-container">
@@ -71,36 +68,35 @@ export const Certificate = ({ user, onBackToSearch }) => {
               <QRCode value={qrData} size={qrSize} />
             </div>
             <div className="user-details">
-              <div className="user-details-1">
-                <div className="detail-row">
+              <div className="personal-info">
+                <div className="info">
                   <p className='pb'>Birthday:</p>
                   <p>{birthday}</p>
                 </div>
-                <div className="detail-row">
+                <div className="info">
                   <p className='pb'>Age:</p>
                   <p>{age}</p>
                 </div>
-                <div className="detail-row">
+                <div className="info">
                   <p className='pb'>Cluster #:</p>
                   <p>{cluster}</p>
                 </div>
-                <div className="detail-row">
+                <div className="info">
                   <p className='pb'>Precinct #:</p>
                   <p>{precinct}</p>
                 </div>
               </div>
-              <div className="user-details-2">
+              <div className="add-contact-info">
                 <p className='pb'>Address:</p>
                 <p>{ADDRESS}</p>
               </div>
-              <div className="user-details-2">
+              <div className="add-contact-info">
                 <p className='pb'>Contact Number:</p>
                 <p>{contactNumber}</p>
               </div>
             </div>
           </div>
           <div className="footer">
-            <p>certified resident of San Bartolome</p>
             <button
               onClick={onBackToSearch}
               className="back-to-search-button"
