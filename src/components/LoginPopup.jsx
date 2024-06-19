@@ -86,7 +86,7 @@ export const LoginPopup = ({ onClose, onLogin, onSignUp, initialIsSigningUp }) =
                                 </div>
                                 <div>
                                     <label>Signature</label>
-                                    <input type="file" className="form-input" required />
+                                    <input type="file" className="form-input" placeholder="(Optional)" />
                                 </div>
                                 <button type="submit" className="form-submit">Sign Up</button>
                             </div>
