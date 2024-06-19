@@ -108,17 +108,23 @@
   justify-content: space-between;
 } */
 
-.footer {
+/* .footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
   text-align: center;
   margin-top: 20px;
-}
+} */
 
 /* .footer p {
   margin: 10px 0;
   font-weight: bold;
 } */
 
-.footer .back-to-search-button {
+.footer .back {
+  position: absolute;
+  right: 0;
+  bottom: 0;
   padding: 10px 20px;
   background-color: #007bff;
   color: #fff;
@@ -127,9 +133,9 @@
   cursor: pointer;
 }
 
-.footer .back-to-search-button:hover {
+/* .footer .back {
   background-color: #0056b3;
-}
+} */
 
 @media (max-width: 768px) {
   .certificate-info-details {

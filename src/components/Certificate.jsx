@@ -99,7 +99,7 @@ export const Certificate = ({ user, onBackToSearch }) => {
           <div className="footer">
             <button
               onClick={onBackToSearch}
-              className="back-to-search-button"
+              className="back"
             >
               Back to Search PRECINCT NUMBER
             </button>
