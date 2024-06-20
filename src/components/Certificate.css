@@ -13,8 +13,8 @@
 }
 
 .certificate-info-container {
-  width: 800px;
-  height: 800px;
+  width: 100%;
+  height: auto;
   position: relative;
   background: url(/public/E-CERT.png) no-repeat center;
   background-size: contain;
@@ -135,27 +135,12 @@
 } */
 
 @media (max-width: 768px) {
-  .certificate-info-details {
-    padding: 10px;
+  .certificate-container {
+    width: 95%;
   }
 
   .details-container {
-    flex-direction: column;
-  }
-
-  .photo-container img {
-    width: 100px;
-    height: 100px;
-  }
-
-  .name-container {
-    font-size: 16px;
-    padding: 8px;
-  }
-
-  .personal-info, .add-contact-info {
-    padding: 5px;
-    font-size: 14px;
+    justify-content: center;
   }
 }
 
@@ -167,14 +152,20 @@
 
   .details-container {
     flex-direction: column;
-    gap: 10px;
   }
 
-  .qr-code {
+  .photo-container img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .name-container {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .personal-info, .add-contact-info {
     padding: 5px;
-  }
-
-  .back-box .back {
-    width: 100%;
+    font-size: 12px;
   }
 }
