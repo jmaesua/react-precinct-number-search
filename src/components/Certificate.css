@@ -13,8 +13,8 @@
 }
 
 .certificate-info-container {
-  width: 100%;
-  height: auto;
+  width: 800px;
+  height: 800px;
   position: relative;
   background: url(/public/E-CERT.png) no-repeat center;
   background-size: contain;
