@@ -4,10 +4,10 @@ import { SearchResult } from "./SearchResult";
 export const SearchResultsList = ({ results, handleResultClick }) => {
 
   const sortedResults = [...results].sort((a, b) => {
-    if (a.name < b.name) {
+    if (a.NAME < b.NAME) {
       return -1;
     }
-    if (a.name > b.name) {
+    if (a.NAME > b.NAME) {
       return 1;
     }
     return 0;
