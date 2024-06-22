@@ -24,7 +24,7 @@
 
 .certificate-info-details {
   position: relative;
-  top: 16%;
+  top: 26%;
   padding: 20px;
   background: transparent;
   /* border-radius: 10px; */
@@ -43,9 +43,8 @@
 }
 
 .photo-container img {
-  width: 150px;
-  height: 150px;
-  padding: 5px;
+  width: 125px;
+  height: 125px;
   border-radius: 5px;
   border: 2px solid #000;
   object-fit: cover;
