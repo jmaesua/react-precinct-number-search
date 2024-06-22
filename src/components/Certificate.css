@@ -209,13 +209,12 @@
 @media (max-width: 480px) {
   .certificate-container {
     width: 100%;
-    height: 800px;
     padding: 10px;
 }
 
   .certificate-info-details {
     top: 23%; /* Adjust positioning if needed */
-    height: auto; /* Let height adjust automatically */
+    height: 80vh; /* Let height adjust automatically */
     display: block;
 }
   
