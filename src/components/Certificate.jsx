@@ -21,10 +21,12 @@ export const Certificate = ({ user, onBackToSearch }) => {
   const [qrSize, setQrSize] = useState(110);
 
   const updateQrsize = () => {
-    if (window.innerWidth < 600) {
+    if (window.innerWidth < 834) {
       setQrSize(100);
     } else if (window.innerWidth < 768) {
       setQrSize(100);
+    } else if (window.innerWidth < 480) {
+      setQrSize(70);
     } else {
       setQrSize(110);
     }
