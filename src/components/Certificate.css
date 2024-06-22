@@ -487,6 +487,7 @@
   }
   
   @media (max-width: 480px) {
+   .certificate-container, 
    .certificate-info-container {
     padding: 5px;
     background-size: contain;
