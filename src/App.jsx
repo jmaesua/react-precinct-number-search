@@ -43,12 +43,12 @@ function App() {
     setShowCertificate(true);
   };
 
-  const handleBackToSearch = () => {
+  const handleBackToLandingPage = () => {
     setShowCertificate(false);
     setResults([]);
     setSelectedUser(null);
     setBirthday("");
-    setShowSearch(true);
+    setShowSearch(false);
   }
 
   const handleNavigateToSearch = () => {
@@ -79,7 +79,7 @@ function App() {
             <RegistrationForm onSubmit={handleRegistrationSubmit} />
           )}
           {showCertificate && (
-            <Certificate user={selectedUser} onBackToSearch={handleBackToSearch} />
+            <Certificate user={selectedUser} onBackToLandingPage={handleBackToLandingPage} />
           )}
         </div>
       )}

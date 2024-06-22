@@ -3,7 +3,7 @@ import './Certificate.css';
 import QRCode from 'qrcode.react';
 import Ecert from '/E-CERT.png';
 
-export const Certificate = ({ user, onBackToSearch }) => {
+export const Certificate = ({ user, onBackToLandingPage }) => {
   const {
     NAME,
     birthday,
@@ -107,7 +107,7 @@ export const Certificate = ({ user, onBackToSearch }) => {
       </div>
       <div className="back-box">
         <button
-          onClick={onBackToSearch}
+          onClick={onBackToLandingPage}
           className="back"
           >
           BACK
