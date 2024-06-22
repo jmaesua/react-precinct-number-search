@@ -7,7 +7,7 @@
   border-radius: 10px;
   z-index: 1000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  width: 90%;
   max-width: 800px;
   box-sizing: border-box;
 }
@@ -104,23 +104,6 @@
   border-radius: 8px;
 }
 
-/* .user-details-1 .detail-row, .user-details-2 {
-  display: flex;
-  justify-content: space-between;
-} */
-
-/* .footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  text-align: center;
-  margin-top: 20px;
-} */
-
-/* .footer p {
-  margin: 10px 0;
-  font-weight: bold;
-} */
 
 .back-box .back {
   padding: 10px 20px;
@@ -131,11 +114,8 @@
   cursor: pointer;
 }
 
-/* .footer .back {
-  background-color: #0056b3;
-} */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .certificate-container {
     width: 95%;
   }
@@ -168,5 +148,55 @@
   .personal-info, .add-contact-info {
     padding: 5px;
     font-size: 12px;
+  }
+} */
+
+
+@media (max-width: 1440px) { 
+  .certificate-container {
+      width: 85%; /* Adjust for laptops */
+  }
+}
+
+@media (max-width: 1024px) {
+  .certificate-container {
+      width: 95%; 
+  }
+
+  .certificate-info-details {
+      width: 90%; /* Let details scale with container */
+  }
+}
+
+@media (max-width: 834px) {
+  .certificate-info-details {
+      top: 20%; /* Adjust positioning if needed */
+      height: auto; /* Let height adjust automatically */
+  }
+}
+
+@media (max-width: 768px) {
+  .details-container {
+      flex-direction: column;
+  }
+
+  .user-details {
+      width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .certificate-container {
+      padding: 10px;
+  }
+
+  .photo-container img {
+      width: 100px;
+      height: 100px;
+  }
+
+  .name-container,
+  .certificate-info-details {
+      width: 100%; /* Full width on small screens */
   }
 }
