@@ -15,8 +15,8 @@ export const SearchResultsList = ({ results, handleResultClick }) => {
   
   return (
     <div className="results-list">
-      {results.map((result, index) => (
-        <SearchResult key={index} result={sortedResults(result)} handleResultClick={handleResultClick} />
+      {sortedResults.map((result, index) => (
+        <SearchResult key={index} result={result} handleResultClick={handleResultClick} />
       ))}
     </div>
   );
