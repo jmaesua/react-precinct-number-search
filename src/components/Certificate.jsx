@@ -4,6 +4,11 @@ import QRCode from 'qrcode.react';
 import Ecert from '/E-CERT.png';
 
 export const Certificate = ({ user, onBackToLandingPage }) => {
+
+  const sanitizeName = (name) => {
+    return name.replace('*', '')
+  }
+
   const {
     NAME,
     birthday,
@@ -67,7 +72,7 @@ export const Certificate = ({ user, onBackToLandingPage }) => {
             <img src={displayPhotoUrl} alt="User Photo" />
           </div>
           <div className="name-container">
-            <h2>{NAME}</h2>
+            <h2>{sanitizeName(NAME)}</h2>
           </div>
           <div className="details-container">
             <div className="qr-code">
