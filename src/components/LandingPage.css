@@ -103,6 +103,8 @@
 
 /* Hero section styles */
 .hero-section {
+  background: url(/public/bg-landingpage.png) no-repeat center;
+  background-size: contain;
   text-align: center;
   padding: 100px 20px;
   background-color: #aeb1ad;
