@@ -124,7 +124,7 @@ export const HeroSection = ({ onNavigateToSearch, isAuthenticated }) => {
             <p>sa <span>BARANGAY SAN BARTOLOME</span></p>
             <p>Kasama Ka!</p>
             <button className="search-button" onClick={handleSearchClick}>
-                Search Precinct Number
+                Search Your Name
             </button>
             {/* {redirectToLoginPopup && <LoginPopup 
             onClose={handleCloseLoginPopup}
