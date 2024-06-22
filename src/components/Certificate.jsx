@@ -20,24 +20,28 @@ export const Certificate = ({ user, onBackToSearch }) => {
 
   const [qrSize, setQrSize] = useState(110);
 
-  const updateQrsize = () => {
-    if (window.innerWidth < 834) {
-      setQrSize(100);
-    } else if (window.innerWidth < 768) {
-      setQrSize(100);
-    } else if (window.innerWidth < 480) {
-      setQrSize(70);
-    } else {
-      setQrSize(110);
-    }
-  };
-
   useEffect(() => {
-    window.addEventListener("resize", updateQrsize);
-    updateQrsize(); // Initial check
+    const updateQrSize = () => {
+      if (window.innerWidth < 480) {
+        setQrSize(50);
+      } else if (window.innerWidth < 768) {
+        setQrSize(100); // Adjust for 768px and below
+      } else if (window.innerWidth < 834) {
+        setQrSize(100); // No change for 834px
+      } else if (window.innerWidth < 1024) {
+        setQrSize(110); // Back to default for 1024px and above
+      } else if (window.innerWidth < 1440) {
+        setQrSize(110); // No change for 1440px
+      } else {
+        setQrSize(110); // Default for larger screens
+      }
+    };
+
+    window.addEventListener('resize', updateQrSize);
+    updateQrSize(); // Initial check on component mount
 
     return () => {
-      window.removeEventListener("resize", updateQrsize);
+      window.removeEventListener('resize', updateQrSize);
     };
   }, []);
 
