@@ -490,6 +490,7 @@
    .certificate-info-container {
     padding: 5px;
     background-size: contain;
+    height: 800px;
    }
   
    .certificate-info-details {
