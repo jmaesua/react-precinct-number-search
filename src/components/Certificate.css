@@ -152,9 +152,9 @@
 } */
 
 
-@media (max-width: 1440px) { 
+/* @media (max-width: 1440px) { 
   .certificate-container {
-      width: 85%; /* Adjust for laptops */
+      width: 85%; 
   }
 }
 
@@ -164,7 +164,7 @@
   }
 
   .certificate-info-details {
-      width: 90%; /* Let details scale with container */
+      width: 90%; 
   }
 }
 
@@ -174,8 +174,8 @@
       margin-top: 20px;
   }
   .certificate-info-details {
-      top: 23%; /* Adjust positioning if needed */
-      height: auto; /* Let height adjust automatically */
+      top: 23%; 
+      height: auto; 
   }
 
   .photo-container {
@@ -191,8 +191,8 @@
 }
 
   .certificate-info-details {
-  top: 26%; /* Adjust positioning if needed */
-  height: 80vh; /* Let height adjust automatically */
+  top: 26%; 
+  height: 80vh; 
 }
 
 .photo-container {
@@ -207,7 +207,7 @@
 
   .details-container {
       width: auto;
-      /* flex-direction: column; */
+      
   }
 
   .user-details {
@@ -222,9 +222,9 @@
 }
 
   .certificate-info-details {
-    top: 25%; /* Adjust positioning if needed */
+    top: 25%; 
     width: 100%;
-    height: auto; /* Let height adjust automatically */
+    height: auto; 
 }
   
   .photo-container img {
@@ -234,7 +234,7 @@
 
   .name-container
    {
-      width: 60%; /* Full width on small screens */
+      width: 60%; 
   }
 
   .name-container h2 {
@@ -255,7 +255,6 @@
   .qr-code {
     width: 70px;
     height: 70px;
-    /* border: 1px solid #333; */
   }
   
   .user-details {
@@ -281,5 +280,104 @@
     padding: 2px 10px 2px 5px;
     border-radius: 8px;
     font-size: 12px;
+  }
+} */
+
+
+@media (max-width: 1440px) {
+  /* Adjustments for 1440px screens and below */
+  .certificate-info-details {
+    top: 24%;
+    width: 410px; /* Slightly smaller width */
+  }
+
+  .name-container {
+    width: 410px; /* Match details width */
+  }
+
+  .details-container {
+    width: 410px; /* Match details width */
+  }
+}
+
+
+@media (max-width: 1024px) {
+  /* Adjustments for 1024px screens and below */
+  .certificate-info-container {
+    padding: 15px;
+    width: 80%;
+    height: auto;
+  }
+  .certificate-info-details {
+    top: 20%;
+    width: 90%; /* Larger percentage for smaller screens */
+    height: auto;
+  }
+
+  .name-container {
+    width: 100%; 
+  }
+
+  .details-container {
+    width: 100%; 
+  }
+}
+
+@media (max-width: 834px) {
+  /* Adjustments for 834px screens and below */
+  .certificate-info-container {
+    padding: 10px;
+    width: 90%;
+  }
+
+  .certificate-info-details {
+    top: 20%;
+    width: 95%;
+    padding: 10px; /* Smaller padding */
+  }
+
+  .details-container {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    gap: 10px; /* Smaller gap */
+  }
+
+  .qr-code {
+    width: 100%;
+    height: auto; /* Let height adjust automatically */
+  }
+
+  .user-details {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Adjustments for 768px screens and below (if needed, usually similar to 834px) */
+
+  .certificate-info-details {
+    top: 15%; /* Adjust as needed */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjustments for 480px screens and below (smartphones) */
+  .certificate-info-container {
+    padding: 5px; /* Minimal padding */
+    background-size: cover;
+  }
+
+  .certificate-info-details {
+    top: 15%; 
+    width: 98%; /* Take up almost full width */
+    padding: 5px; /* Minimal padding */
+  }
+
+  .name-container h2 {
+    font-size: 16px; /* Slightly smaller font */
+  }
+
+  .personal-info, .add-contact-info {
+    font-size: 14px; /* Smaller font for details */
   }
 }
