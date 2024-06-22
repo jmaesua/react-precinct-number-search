@@ -84,10 +84,10 @@ export const LoginPopup = ({ onClose, onLogin, onSignUp, initialIsSigningUp }) =
                                     <label>Photo</label>
                                     <input type="file" className="form-input" required />
                                 </div> */}
-                                <div>
+                                {/* <div>
                                     <label>Signature</label>
                                     <input type="file" className="form-input" required />
-                                </div>
+                                </div> */}
                                 <button type="submit" className="form-submit">Sign Up</button>
                             </div>
                         )}
