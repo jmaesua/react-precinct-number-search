@@ -204,10 +204,9 @@
   .certificate-info-details {
     top: 23%; /* Adjust positioning if needed */
     height: auto; /* Let height adjust automatically */
-    width: 60%;
 }
   .certificate-container {
-      width: 50%;
+      width: 80%;
       padding: 10px;
   }
 
@@ -218,6 +217,6 @@
 
   .name-container
    {
-      width: 50%; /* Full width on small screens */
+      width: 80%; /* Full width on small screens */
   }
 }
