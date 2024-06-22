@@ -75,6 +75,12 @@ export const LandingPage = ({ onNavigateToSearch }) => {
 };
 
 export const Navbar = ({ onNavigateToSearch, onSignUpPopupToggle, onSignInPopupToggle, isAuthenticated }) => {
+    const [isMenuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!isMenuOpen);
+    };
+
     return (
         <nav className="navbar">
             <div className="logo">
@@ -87,6 +93,17 @@ export const Navbar = ({ onNavigateToSearch, onSignUpPopupToggle, onSignInPopupT
                 <button className="nav-link" onClick={onSignUpPopupToggle}>Sign Up. Be a Member</button>
                 <button className="nav-link" onClick={onSignInPopupToggle}>Already a Member? Sign In</button>
             </div>
+            <div className="hamburger" onClick={toggleMenu}>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            {isMenuOpen && (
+                <div className="navbar-menu">
+                    <a href="#" onClick={onSignUpPopupToggle}>Sign Up. Be a Member</a>
+                    <a href="#" onClick={onSignInPopupToggle}>Already a Member? Sign In</a>
+                </div>
+            )}
         </nav>
     );
 };
