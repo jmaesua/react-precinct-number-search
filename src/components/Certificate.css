@@ -244,7 +244,7 @@
 
   .details-container {
     height: 80px;
-    width: 400px;
+    width: 80%;
     margin-top: 5px;
   
     display: flex;
@@ -254,18 +254,17 @@
   
   .qr-code {
     width: 70px;
-    height: 100%;
+    height: 80%;
     /* border: 1px solid #333; */
   }
   
   .user-details {
-    width: 76%;
+    width: 350px;
     height: 100%;
   
     display: flex;
     flex-direction: column;
-    gap: 50px;
-
+    gap: 5px;
     font-size: 14px;
   }
   
