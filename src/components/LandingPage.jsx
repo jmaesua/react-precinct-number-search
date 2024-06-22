@@ -27,6 +27,7 @@ export const LandingPage = ({ onNavigateToSearch }) => {
             setAuthenticated(true);
             localStorage.setItem("isAuthenticated", "true");
             setShowLoginPopup(false);
+            onNavigateToSearch();
         } else {
             alert("Please sign up first.");
         }
@@ -45,11 +46,6 @@ export const LandingPage = ({ onNavigateToSearch }) => {
         }
     };
 
-    const handleLogout = () => {
-        setAuthenticated(false);
-        localStorage.removeItem("isAuthenticated");
-    };
-
     return (
         <div className="landing-page">
             {showLoginPopup && (
@@ -63,59 +59,44 @@ export const LandingPage = ({ onNavigateToSearch }) => {
 
             <Navbar
                 onNavigateToSearch={onNavigateToSearch}
-                onLoginPopupToggle={() => handleLoginPopupToggle(true)}
-                onMemberLoginPopupToggle={() => handleLoginPopupToggle(false)}
+                onSignUpPopupToggle={() => handleLoginPopupToggle(true)}
+                onSignInPopupToggle={() => handleLoginPopupToggle(false)}
                 isAuthenticated={isAuthenticated}
             />
             <HeroSection
                 onNavigateToSearch={onNavigateToSearch}
-                // onShowLoginPopup = {() => handleLoginPopupToggle(true)}
+                onSignUpPopupToggle={() => handleLoginPopupToggle(true)}
                 isAuthenticated={isAuthenticated}
             />
             <MediaSection />
-            <Footer onLogout={handleLogout} isAuthenticated={isAuthenticated} />
+            <Footer isAuthenticated={isAuthenticated} />
         </div>
     );
 };
 
-export const Navbar = ({ onNavigateToSearch, onLoginPopupToggle,onMemberLoginPopupToggle, isAuthenticated }) => {
-    // const handleMemberClick = () => {
-    //     if (isAuthenticated) {
-    //         onNavigateToSearch();
-    //     } else {
-    //         onMemberLoginPopupToggle();
-    //     }
-    // };
-
+export const Navbar = ({ onNavigateToSearch, onSignUpPopupToggle, onSignInPopupToggle, isAuthenticated }) => {
     return (
         <nav className="navbar">
             <div className="logo">
-                <a href="https://www.jonjonfrancisco.com" title="San Bartolome">
+                <a href="/" title="San Bartolome">
                     <img src={logo} alt="Logo image" />
                     <h2>Barangay San Bartolome</h2>
                 </a>
             </div>
             <div className="auth-buttons">
-                {/* <button className="sign-in-button" onClick={handleMemberClick}>
-                    Signin/Signup. Be a Member
-                </button> */}
-                <button className="nav-link" onClick={onLoginPopupToggle}>Signup. Be a Member</button>
+                <button className="nav-link" onClick={onSignUpPopupToggle}>Sign Up. Be a Member</button>
+                <button className="nav-link" onClick={onSignInPopupToggle}>Already a Member? Sign In</button>
             </div>
         </nav>
     );
 };
 
-export const HeroSection = ({ onNavigateToSearch, isAuthenticated }) => {
-    // const [redirectToLoginPopup, setRedirectToLoginPopup] = useState(false);
-
+export const HeroSection = ({ onNavigateToSearch, onSignUpPopupToggle, isAuthenticated }) => {
     const handleSearchClick = () => {
         if (isAuthenticated) {
             onNavigateToSearch();
-        } else {
-            alert("Please sign in or sign up to access the search functionality.");
         }
     };
-
 
     return (
         <section className="hero-section">
@@ -123,12 +104,11 @@ export const HeroSection = ({ onNavigateToSearch, isAuthenticated }) => {
             <p>Serbisyong <span>JONJON FRANCISCO</span>...</p>
             <p>sa <span>BARANGAY SAN BARTOLOME</span></p>
             <p>Kasama Ka!</p>
-            <button className="search-button" onClick={handleSearchClick}>
-                Search Your Name
-            </button>
-            {/* {redirectToLoginPopup && <LoginPopup 
-            onClose={handleCloseLoginPopup}
-            />} */}
+            {isAuthenticated && (
+                <button className="search-button" onClick={handleSearchClick}>
+                    Search Your Name
+                </button>
+            )}
         </section>
     );
 };
@@ -166,7 +146,7 @@ export const MediaSection = () => {
     );
 };
 
-export const Footer = ({ onLogout, isAuthenticated }) => {
+export const Footer = ({ isAuthenticated }) => {
     return (
         <footer className="footer">
             <p>&copy; 2024 Barangay San Bartolome. All rights reserved.</p>
@@ -178,11 +158,6 @@ export const Footer = ({ onLogout, isAuthenticated }) => {
                     <FaInstagram className="social-icon" />
                 </a>
             </div>
-            {isAuthenticated && (
-                <button className="logout-button" onClick={onLogout}>
-                    Logout
-                </button>
-            )}
         </footer>
     );
 };
