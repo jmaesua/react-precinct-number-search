@@ -208,7 +208,8 @@
 
 @media (max-width: 480px) {
   .certificate-container {
-    width: 95%;
+    width: 100%;
+    height: 800px;
     padding: 10px;
 }
 
