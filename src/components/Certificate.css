@@ -18,7 +18,6 @@
 .certificate-info-container {
   position: relative;
   width: 100%;
-  /* height: 100%; */
   padding-bottom: 100%; /* Aspect ratio 1:1 (100% height of width) */
   background: url('/public/E-CERT.png') no-repeat center center / contain;
   box-sizing: border-box;
@@ -45,8 +44,8 @@
 }
 
 .photo-container img {
-  width: 125px;
-  height: 125px;
+  width: 100px;
+  height: 100px;
   border-radius: 5px;
   border: 2px solid #000;
   object-fit: cover;
@@ -104,6 +103,10 @@
 /* Responsive Styles */
 
 @media (max-width: 1440px) {
+  .certificate-info-container {
+    background: url('/public/E-CERT.png') no-repeat center center / contain;
+  }
+
   .certificate-info-details {
     top: 24%;
     width: 410px;
@@ -120,6 +123,7 @@
 
 @media (max-width: 1024px) {
   .certificate-info-container {
+    background: url('/public/E-CERT.png') no-repeat center center / contain;
     padding: 15px;
   }
 
@@ -139,6 +143,7 @@
 
 @media (max-width: 834px) {
   .certificate-info-container {
+    background: url('/public/E-CERT.png') no-repeat center center / contain;
     padding: 10px;
   }
 
@@ -174,6 +179,7 @@
 
 @media (max-width: 768px) {
   .certificate-info-container {
+    background: url('/public/E-CERT.png') no-repeat center center / contain;
     margin-top: 20px;
   }
 
@@ -208,8 +214,8 @@
 }
 
 @media (max-width: 480px) {
-  .certificate-container, 
   .certificate-info-container {
+    background: url('/public/E-CERT.png') no-repeat center center / contain;
     padding: 5px;
   }
 
