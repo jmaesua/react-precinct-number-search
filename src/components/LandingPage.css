@@ -127,6 +127,15 @@
   margin-bottom: 10px;
 }
 
+.hero-section h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 80px;
+  padding: 10px;
+  background-color: #89091d;
+  color: #fff;
+}
+
 .search-button {
   padding: 15px 30px;
   font-size: 18px;
