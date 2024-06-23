@@ -16,7 +16,7 @@
   width: 800px;
   height: 800px;
   position: relative;
-  background: url('/mnt/data/image.png') no-repeat center;
+  background: url('/public/E-CERT.png') no-repeat center;
   background-size: contain;
   padding: 20px;
 }
