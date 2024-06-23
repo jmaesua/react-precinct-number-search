@@ -128,13 +128,15 @@
 }
 
 .hero-section h2 {
-  width: 700px;
+  width: 800px;
   font-size: 24px;
   font-weight: bold;
-  margin-block-start: 150px;
+  margin-block-start: 170px;
   margin-inline: auto;
   padding: 10px;
   background-color: #89091d;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   color: #fff;
 }
 
