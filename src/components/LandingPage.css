@@ -131,11 +131,11 @@
   width: 700px;
   font-size: 24px;
   font-weight: bold;
-  margin: auto;
+  margin-block-start: 150px;
+  margin-inline: auto;
   padding: 10px;
   background-color: #89091d;
   color: #fff;
-  bottom: 0;
 }
 
 .search-button {
