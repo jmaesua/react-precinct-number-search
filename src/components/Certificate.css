@@ -13,12 +13,12 @@
 }
 
 .certificate-info-container {
-  width: 800px;
-  height: 800px;
+  width: 100%;
+  height: auto;
   position: relative;
-  background: url('/public/E-CERT.png') no-repeat center;
-  background-size: contain;
+  background: url('/public/E-CERT.png') no-repeat center center / cover;
   padding: 20px;
+  box-sizing: border-box;
 }
 
 .certificate-info-details {
@@ -118,14 +118,12 @@
 @media (max-width: 1024px) {
   .certificate-info-container {
     padding: 15px;
-    width: 80%;
-    height: auto;
+    width: 100%;
   }
 
   .certificate-info-details {
     top: 20%;
     width: 90%;
-    height: auto;
   }
 
   .name-container {
@@ -140,7 +138,7 @@
 @media (max-width: 834px) {
   .certificate-info-container {
     padding: 10px;
-    width: 90%;
+    width: 100%;
   }
 
   .certificate-info-details {
@@ -175,7 +173,7 @@
 
 @media (max-width: 768px) {
   .certificate-info-container {
-    width: 95%;
+    width: 100%;
     margin-top: 20px;
   }
 
@@ -213,8 +211,7 @@
   .certificate-container, 
   .certificate-info-container {
     padding: 5px;
-    background-size: contain;
-    height: 800px;
+    background-size: cover;
   }
 
   .certificate-info-details {
