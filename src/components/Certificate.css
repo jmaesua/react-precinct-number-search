@@ -13,9 +13,9 @@
 }
 
 .certificate-info-container {
-  width: 100%;
-  height: auto;
   position: relative;
+  width: 100%;
+  padding-top: 125%; /* Aspect ratio */
   background: url('/public/E-CERT.png') no-repeat center center / cover;
   padding: 20px;
   box-sizing: border-box;
@@ -118,7 +118,6 @@
 @media (max-width: 1024px) {
   .certificate-info-container {
     padding: 15px;
-    width: 100%;
   }
 
   .certificate-info-details {
@@ -138,7 +137,6 @@
 @media (max-width: 834px) {
   .certificate-info-container {
     padding: 10px;
-    width: 100%;
   }
 
   .certificate-info-details {
@@ -173,7 +171,6 @@
 
 @media (max-width: 768px) {
   .certificate-info-container {
-    width: 100%;
     margin-top: 20px;
   }
 
@@ -211,7 +208,6 @@
   .certificate-container, 
   .certificate-info-container {
     padding: 5px;
-    background-size: cover;
   }
 
   .certificate-info-details {
