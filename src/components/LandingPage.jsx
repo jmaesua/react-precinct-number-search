@@ -126,6 +126,7 @@ export const HeroSection = ({ onNavigateToSearch, onSignUpPopupToggle, isAuthent
                     Search Your Name
                 </button>
             )}
+            <h2>"Nasas PUSO ang paglilingkod para sa inyo at para sa Brgy. San Bartolome"</h2>
         </section>
     );
 };
